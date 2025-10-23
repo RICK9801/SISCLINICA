@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-04-2025 a las 05:15:03
+-- Tiempo de generación: 17-10-2025 a las 21:59:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `clinicadenta`
+-- Base de datos: `clinica`
 --
 
 -- --------------------------------------------------------
@@ -135,63 +135,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2024_12_06_161320_create_registros_table', 2);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `odontologos`
---
-
-CREATE TABLE `odontologos` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `ci` varchar(20) DEFAULT NULL,
-  `especialidad` varchar(100) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `odontologos`
---
-
-INSERT INTO `odontologos` (`id`, `nombre`, `apellido`, `ci`, `especialidad`, `telefono`, `email`, `created_at`, `updated_at`) VALUES
-(2, 'gloriaa', 'quisbert', '987654321', 'donctora', '225556484', 'doctora@gmail.com', '2025-04-14 04:20:23', '2025-04-14 06:07:02');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pacientes`
---
-
-CREATE TABLE `pacientes` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `ci` varchar(20) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `fecha_nacimiento` date DEFAULT NULL,
-  `genero` enum('Masculino','Femenino','Otro') DEFAULT NULL,
-  `direccion` text DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `pacientes`
---
-
-INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `ci`, `telefono`, `email`, `fecha_nacimiento`, `genero`, `direccion`, `created_at`, `updated_at`) VALUES
-(19, 'victor01', 'alave001', '99765325 lp', '77269885', 'victor@gmail.com', '2025-04-30', 'Masculino', 'colo,mbia.', '2025-04-14 03:21:14', '2025-04-14 03:21:39'),
-(21, 'jose', 'luis', '997653255', '6121', 'jose@gmail.com', '2025-04-22', 'Masculino', 'asdfasdg', '2025-04-14 03:22:26', '2025-04-14 03:22:26'),
-(23, 'luis', 'mamani', '9656481', '7726066411', 'aasdf@gmail.com', '2025-04-24', 'Femenino', 'sadf', '2025-04-14 04:04:19', '2025-04-14 04:04:19'),
-(24, 'jorger', 'alave1', '541', '561156', 'aasasb@gmail.com', '0000-00-00', '', '', '2025-04-14 04:05:18', '2025-04-14 04:05:18'),
-(25, 'asdf', 'alave', 'as324', '3245', '234235a@gmail.com', '0000-00-00', '', '', '2025-04-14 04:07:28', '2025-04-14 04:07:28'),
-(26, 'luiss', 'mamani', '123456789', '772564864', 'luisc@gmail.com', '0231-11-23', 'Masculino', 'asdf', '2025-04-14 04:14:46', '2025-04-14 04:14:46');
 
 -- --------------------------------------------------------
 
@@ -388,22 +331,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('9pR68P320CauTDETDCU6FHvcqBPefdn45lYRiRa4', 35, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiT3V4SkRqNWlFNkZXb3I0RHdKMUJDMFJTUEhoZjI5a0N4U1c1Y0x5NCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly9sb2NhbGhvc3QvY2xpbmljYS9wYW5lbC9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozNTt9', 1760731138),
 ('Ef9RcLjCdnhHM9aR7ZQcXaoiHDthAQNw73I5sxNR', 35, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaGxHMmh2T3paQlBOM1Zad0xIVmszaDhINFE5aGlCaGlHRFZ6eTVvciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDk6Imh0dHA6Ly9sb2NhbGhvc3QvY2xpbmljYWRlbnRhbC9wYW5lbC90cmF0YW1pZW50b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozNTt9', 1744599016);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tratamientos`
---
-
-CREATE TABLE `tratamientos` (
-  `id` int(11) NOT NULL,
-  `cita_id` int(11) NOT NULL,
-  `descripcion` text NOT NULL,
-  `fecha_inicio` date NOT NULL,
-  `costo` decimal(10,2) DEFAULT NULL,
-  `estado` enum('en_proceso','completado','cancelado') DEFAULT 'en_proceso'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -485,20 +414,6 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `odontologos`
---
-ALTER TABLE `odontologos`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `ci` (`ci`);
-
---
--- Indices de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `ci` (`ci`);
-
---
 -- Indices de la tabla `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
@@ -537,13 +452,6 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indices de la tabla `tratamientos`
---
-ALTER TABLE `tratamientos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `cita_id` (`cita_id`);
-
---
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -579,18 +487,6 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `odontologos`
---
-ALTER TABLE `odontologos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
 -- AUTO_INCREMENT de la tabla `permission`
 --
 ALTER TABLE `permission`
@@ -615,12 +511,6 @@ ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de la tabla `tratamientos`
---
-ALTER TABLE `tratamientos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
@@ -636,12 +526,6 @@ ALTER TABLE `users`
 ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`),
   ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`odontologo_id`) REFERENCES `odontologos` (`id`);
-
---
--- Filtros para la tabla `tratamientos`
---
-ALTER TABLE `tratamientos`
-  ADD CONSTRAINT `tratamientos_ibfk_1` FOREIGN KEY (`cita_id`) REFERENCES `citas` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

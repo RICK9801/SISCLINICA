@@ -47,59 +47,16 @@
 </li>
 @endif
 
-    @if(!empty($permissionSetting))
+    <!-- @if(!empty($permissionCategory))
     <li class="nav-item">
       <a class="nav-link @if(Request::segment(2) != 'setting') collapsed @endif" href="{{ url('panel/pacientes') }}">
         <i class="bi bi-gear"></i>
         <span>pacientes</span>
       </a>
     </li>
-    @endif
+    @endif -->
     
-    @if(!empty($permissionSubCategory))
-    <li class="nav-item">
-      <a class="nav-link @if(Request::segment(2) != 'subcategory') collapsed @endif" href="{{ url('panel/odontologos') }}">
-        <i class="ri-24-hours-fill"></i>
-        <span>odontologos</span>
-      </a>
-    </li>
-    @endif
-  
-    @if(!empty($permissionProduct))
-    <li class="nav-item">
-      <a class="nav-link @if(Request::segment(2) != 'product') collapsed @endif" href="{{ url('panel/tratamientos') }}">
-        <i class="bi bi-box"></i>
-        <span>tratamientos</span>
-      </a>
-    </li>
-    @endif
-  
-    @if(!empty($permissionSetting))
-    <li class="nav-item">
-      <a class="nav-link @if(Request::segment(2) != 'setting') collapsed @endif" href="{{ url('panel/servicios') }}">
-        <i class="bi bi-gear"></i>
-        <span>servicios</span>
-      </a>
-    </li>
-    @endif
-
-     @if(!empty($permissionSetting))
-    <li class="nav-item">
-      <a class="nav-link @if(Request::segment(2) != 'setting') collapsed @endif" href="{{ url('panel/citas') }}">
-        <i class="bi bi-gear"></i>
-        <span>servicios</span>
-      </a>
-    </li>
-    @endif
-
-    
-
-    <!-- <li class="nav-item">
-      <a class="nav-link @if(Request::segment(2) != 'setting') collapsed @endif" href="{{ url('panel/perfil') }}">
-        <i class="bi bi-gear"></i>
-        <span>perfil</span>
-      </a>
-    </li> -->
+ 
   
   </ul>
   

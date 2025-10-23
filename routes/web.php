@@ -6,16 +6,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OdontologosController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\RecuperacionController;
-use App\Http\Controllers\CitasController;
 
 use Illuminate\Support\Facades\Password;
 
 use App\Http\Controllers\PasswordController;
-use App\Http\Controllers\TratamientosController;
-use App\Http\Controllers\ServicioController;
-use App\Http\Controllers\PerfilController;
 
 // use App\Http\Controllers\Auth\ForgotPasswordController;
 // use App\Http\Controllers\Auth\ResetPasswordController;
@@ -61,42 +56,7 @@ Route::get('panel/dashboard', [DashboardController::class, 'dashboard']);
      Route::post('panel/user/edit/{id}', [UserController::class, 'update']);    
      Route::get('panel/user/delete/{id}', [UserController::class, 'delete']);
 
-     Route::get('panel/pacientes', [PacientesController::class, 'index']);
-     Route::get('panel/pacientes/add', [PacientesController::class, 'create']);    
-     Route::post('panel/pacientes/add', [PacientesController::class, 'store']);
-     Route::get('panel/pacientes/edit/{id}', [PacientesController::class, 'edit']);    
-     Route::post('panel/pacientes/edit/{id}', [PacientesController::class, 'update']);    
-     Route::get('panel/pacientes/delete/{id}', [PacientesController::class, 'destroy']);
-
-     Route::get('panel/odontologos', [OdontologosController::class, 'index']);
-     Route::get('panel/odontologos/add', [OdontologosController::class, 'create']);    
-     Route::post('panel/odontologos/add', [OdontologosController::class, 'store']);
-     Route::get('panel/odontologos/edit/{id}', [OdontologosController::class, 'edit']);    
-     Route::post('panel/odontologos/edit/{id}', [OdontologosController::class, 'update']);    
-     Route::get('panel/odontologos/delete/{id}', [OdontologosController::class, 'destroy']);
-
-     Route::get('panel/tratamientos', [TratamientosController::class, 'index']);
-     Route::get('panel/tratamientos/add', [TratamientosController::class, 'create']);    
-     Route::post('panel/tratamientos/add', [TratamientosController::class, 'store']);
-     Route::get('panel/tratamientos/edit/{id}', [TratamientosController::class, 'edit']);    
-     Route::post('panel/tratamientos/edit/{id}', [TratamientosController::class, 'update']);    
-     Route::get('panel/tratamientos/delete/{id}', [TratamientosController::class, 'destroy']);
-
-     Route::get('panel/servicios', [ServicioController::class, 'index']);
-     Route::get('panel/servicios/add', [ServicioController::class, 'create']);    
-     Route::post('panel/servicios/add', [ServicioController::class, 'store']);
-     Route::get('panel/servicios/edit/{id}', [ServicioController::class, 'edit']);    
-     Route::post('panel/servicios/edit/{id}', [ServicioController::class, 'update']);    
-     Route::get('panel/servicios/delete/{id}', [ServicioController::class, 'destroy']);
-     
-     Route::get('panel/perfil', [PerfilController::class, 'index']);
-
-     Route::get('panel/citas', [CitasController::class, 'index']);
-     Route::get('panel/citas/add', [CitasController::class, 'create']);    
-     Route::post('panel/citas/add', [CitasController::class, 'store']);
-     Route::get('panel/citas/edit/{id}', [CitasController::class, 'edit']);    
-     Route::post('panel/citas/edit/{id}', [CitasController::class, 'update']);    
-     Route::get('panel/citas/delete/{id}', [CitasController::class, 'destroy']);
+    
 
 
  });
